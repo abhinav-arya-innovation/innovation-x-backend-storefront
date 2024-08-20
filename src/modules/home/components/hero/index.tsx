@@ -1,22 +1,52 @@
 import { Github } from "@medusajs/icons"
 import { Button, Heading } from "@medusajs/ui"
+import { size } from "lodash"
+import { Eagle_Lake } from "next/font/google"
+
+
+
+
+
+
+const eagle_Lake= Eagle_Lake({
+  subsets:['latin'],
+  weight:['400'],
+  style:'normal',
+  display:"fallback",
+  })
+
+
+
+   
 
 const Hero = () => {
   return (
-    <div className="h-[75vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle">
-      <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:p-32 gap-6">
+    <div className="h-[75vh] w-full border-b border-ui-border-base relative bg-ui-bg-subtle" style={{
+      backgroundImage: `url('//ptal.in/cdn/shop/files/Group_1073715221.webp?v=1702448728&amp;width=2400')`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      width: '100vw',
+      height: '100vh',
+    }}>
+      <div className="absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:p-32 gap-6"style={{
+      backgroundImage: `url('../../../../../public/Background_Img.jpg')`,
+      backgroundSize: 'cover',
+      backgroundRepeat: 'no-repeat',
+      width: '100vw',
+      height: '100vh',
+    }}>
         <span>
           <Heading
             level="h1"
-            className="text-3xl leading-10 text-ui-fg-base font-normal"
+            className={eagle_Lake.className}
           >
-            Ecommerce Starter Template
+            Tadkaa Karigari Ka 
           </Heading>
           <Heading
-            level="h2"
-            className="text-3xl leading-10 text-ui-fg-subtle font-normal"
+            level="h3"
+            className={eagle_Lake.className}
           >
-            Powered by Medusa and Next.js
+          Powered by tadkakarigari
           </Heading>
         </span>
         <a

@@ -1,4 +1,3 @@
-const path = require("path")
 
 module.exports = {
   darkMode: "class",
@@ -34,6 +33,11 @@ module.exports = {
           80: "#1F2937",
           90: "#111827",
         },
+        amber: {
+          50: '#F6E0BC', // Your custom color
+          // Add other shades if needed (100, 200, etc.)
+          200:'#B01C1A'
+        },    
       },
       borderRadius: {
         none: "0px",
@@ -57,6 +61,7 @@ module.exports = {
       },
       fontSize: {
         "3xl": "2rem",
+        "5xl":"10rem",
       },
       fontFamily: {
         sans: [
@@ -69,6 +74,7 @@ module.exports = {
           "Ubuntu",
           "sans-serif",
         ],
+        customFont: ['Fondamento-Italic','Fondamento-Regular'],
       },
       keyframes: {
         ring: {

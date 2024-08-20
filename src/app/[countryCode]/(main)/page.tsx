@@ -65,11 +65,11 @@ export default async function Home({
   if (!collections || !region) {
     return null
   }
-
+  console.log(JSON.stringify(collections))
   return (
     <>
       <Hero />
-      <div className="py-12">
+      <div className="py-12">    
         <ul className="flex flex-col gap-x-6">
           <FeaturedProducts collections={collections} region={region} />
         </ul>

@@ -4,14 +4,28 @@ import { listRegions } from "@lib/data"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CartButton from "@modules/layout/components/cart-button"
 import SideMenu from "@modules/layout/components/side-menu"
+import { Backdrop } from "@mui/material"
+import { Eagle_Lake } from "next/font/google"
+import { size } from "lodash"
+
+const eagle_Lake= Eagle_Lake({
+  subsets:['latin'],
+  weight:['400'],
+  style:'normal',
+  display:"fallback",
+  })
+  
 
 export default async function Nav() {
   const regions = await listRegions().then((regions) => regions)
+  
+
 
   return (
     <div className="sticky top-0 inset-x-0 z-50 group">
-      <header className="relative h-16 mx-auto border-b duration-200 bg-white border-ui-border-base">
-        <nav className="content-container txt-xsmall-plus text-ui-fg-subtle flex items-center justify-between w-full h-full text-small-regular">
+      <header className="relative h-16 mx-auto border-b duration-200  border-ui-border-base ">
+       {/* Changes Abhinav */}
+        <nav className="content-container txt-fontSize-5xl text-ui-fg-subtle flex items-center justify-between w-full h-full text-small-regular bg-amber-50 bg-opacity-1 bg-clip-padding blur-backdrop-filter">
           <div className="flex-1 basis-0 h-full flex items-center">
             <div className="h-full">
               <SideMenu regions={regions} />
@@ -21,10 +35,10 @@ export default async function Nav() {
           <div className="flex items-center h-full">
             <LocalizedClientLink
               href="/"
-              className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
+              className={eagle_Lake.className}
               data-testid="nav-store-link"
             >
-              Medusa Store
+              Karigar's Store
             </LocalizedClientLink>
           </div>
 
