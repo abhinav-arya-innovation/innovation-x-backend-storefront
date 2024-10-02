@@ -176,7 +176,9 @@ export async function setPaymentMethod(providerId: string) {
   if (!cartId) throw new Error("No cartId cookie found")
 
   try {
+    console.log("cartId: " + cartId); // Log the cartId
     const cart = await setPaymentSession({ cartId, providerId })
+    console.log("cart: " + cart);
     revalidateTag("cart")
     return cart
   } catch (error: any) {
@@ -186,6 +188,7 @@ export async function setPaymentMethod(providerId: string) {
 
 export async function placeOrder() {
   const cartId = cookies().get("_medusa_cart_id")?.value
+  console.log("const cartId"+cartId?.toString)
 
   if (!cartId) throw new Error("No cartId cookie found")
 
@@ -193,6 +196,7 @@ export async function placeOrder() {
 
   try {
     cart = await completeCart(cartId)
+    console.log("cart"+JSON.stringify(cart))
     revalidateTag("cart")
   } catch (error: any) {
     throw error
